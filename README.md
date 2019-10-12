@@ -15,6 +15,10 @@
 
    ![alt text](https://i.ibb.co/R3LCdgV/img.png)
 
+## Poznámka
+
+    - z úkolu jsem odstranil všechny osobní ůdaje zadavajicího
+
 ## Installation
 
 - `yarn`
