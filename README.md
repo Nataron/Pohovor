@@ -1,20 +1,24 @@
-# React Semantic UI Example
+# Kód k pohovoru
 
-[![Build Status](https://travis-ci.org/the-road-to-learn-react/react-semantic-ui-example.svg?branch=master)](https://travis-ci.org/the-road-to-learn-react/react-semantic-ui-example) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/) [![Greenkeeper badge](https://badges.greenkeeper.io/the-road-to-learn-react/react-semantic-ui-example.svg)](https://greenkeeper.io/)
+## Zadání
 
-* [Tutorial](https://www.robinwieruch.de/react-semantic-ui-tutorial)
-* Found in [The Road to learn React](https://roadtoreact.com/)
+\*Úkol pro uchazeče - dashboard
 
-## Features
+1. Popis úkolu
+   Každá sekce v aplikaci musí obsahovat jednoduchý přehled toho, co se právě v dané sekci děje a toho, co se stalo od poslední návštěvy. Dále by aplikace měla uživateli pomoci s tím, co je třeba řešit a předkládat samostatné návrhy dle jednotlivých aktivit a podezřelého chování uživatelů.
+2. Zadání
+   Je třeba vytvořit HTML+CSS+JS stránku, kde bude JS zachycená základní logika a chování obrazovky. K řešení lze použít libovolný přístup nebo framework (VanillaJS, ReactJS, Vue atd.). Pro graf je vhodné použít také samostatnou knihovnu, highcharts.js, chart.js, d3graph apod.
 
-* uses:
-  * React (create-react-app)
-  * Semantic UI React
+   Důležitější je vytvořit funkční in memory prototyp, vzhled a stylování pomocí CSS je až druhotné (styly budou vycházet z již používaných SCSS komponent). Seznam uživatelů i seznam aktivit (log) si můžete vytvořit jako samostatné pole (array) s objekty. Zajímá nás jen samotná obrazovka, menu a horní lištu není třeba řešit.
+
+   Pro splnění úkolu postačí, když tabulka bude jen vypisovat jednotlivé objekty řádků. Dále chceme widget “Role uživatelů” s grafem, který bude reagovat, pokud interaktivně změním počty rolí uživatelů (simulovat např. tlačítkem, že se hodnoty změnily).
+
+   ![alt text](https://ibb.co/T4zHdwF)
 
 ## Installation
 
-* `git clone git@github.com:the-road-to-learn-react/react-semantic-ui-example.git`
-* `cd react-semantic-ui-example`
-* `npm install`
-* `npm start`
-* visit http://localhost:3000/
+-
+
+- `yarn`
+- `yarn start`
+- visit http://localhost:3000/
