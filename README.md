@@ -13,11 +13,9 @@
 
    Pro splnění úkolu postačí, když tabulka bude jen vypisovat jednotlivé objekty řádků. Dále chceme widget “Role uživatelů” s grafem, který bude reagovat, pokud interaktivně změním počty rolí uživatelů (simulovat např. tlačítkem, že se hodnoty změnily).
 
-   ![alt text](https://ibb.co/T4zHdwF)
+   ![alt text](https://i.ibb.co/R3LCdgV/img.png)
 
 ## Installation
-
--
 
 - `yarn`
 - `yarn start`
