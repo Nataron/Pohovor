@@ -1,18 +1,7 @@
 import React from 'react'
 import _ from 'lodash'
-import styled from 'styled-components'
-import { Divider, Grid, Table, Icon } from 'semantic-ui-react'
-import Info from './Info'
 
-const A = styled.div`
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-`
-const Header = styled.h3`
-  font-family: 'Roboto', sans-serif;
-`
+import { Table, Icon } from 'semantic-ui-react'
 
 class Aktivita extends React.Component {
   state = {

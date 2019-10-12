@@ -16,43 +16,6 @@ const Div = styled.div`
 const Header = styled.h3`
   font-family: 'Roboto', sans-serif;
 `
-const options = {
-  chart: {
-    plotBackgroundColor: null,
-    height: 120,
-    plotShadow: false,
-    type: 'pie',
-    aling: 'right',
-  },
-  title: {
-    text: '',
-  },
-  tooltip: {
-    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
-  },
-  legend: {
-    align: 'right',
-    verticalAlign: 'top',
-    layout: 'vertical',
-  },
-  plotOptions: {
-    pie: {
-      size: 80,
-      allowPointSelect: true,
-      cursor: 'pointer',
-      dataLabels: {
-        enabled: false,
-      },
-      showInLegend: true,
-    },
-  },
-
-  series: [
-    {
-      data: [['admin', 3], ['auditor', 2], ['manazer', 5], ['uzivatel', 21]],
-    },
-  ],
-}
 
 class WindowWithGraph extends React.Component {
   state = { optionsState: this.props.optionsData }

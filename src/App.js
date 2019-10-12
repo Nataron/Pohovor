@@ -3,16 +3,16 @@ import { Container, Grid, Icon, Button } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Window from './components/Window'
-import Upozorneni from './components/Upozorneni'
-import Aktivita from './components/Aktivita'
+import Upozorneni from './components/Alert'
+import Aktivita from './components/Activity'
 
 import WindowWithGraph from './components/WindowWithGraph'
 import {
   data,
-  aktualniNumbers,
-  posledniNumbers,
+  actualNumbers,
+  lastNumbers,
   optionsData,
-  UpozorneniText,
+  alertText,
   tableData,
 } from './data/data'
 
@@ -22,54 +22,17 @@ const Div = styled.div`
 
 class App extends React.Component {
   state = { optionsState: optionsData }
-  handleChange = clickedButton => () => {
+
+  handleChange = (clickedButton, isAdd) => () => {
     const { optionsState } = this.state
     var options
-    switch (clickedButton) {
-      case 'addAdmin':
-        options = optionsState.find(item => item.name === 'Admin')
-        options.y = options.y + 1
 
-        this.setState({ optionsState: optionsState })
-        break
-      case 'RemoveAdmin':
-        options = optionsState.find(item => item.name === 'Admin')
-        if (options.y > 0) options.y = options.y - 1
-        this.setState({ optionsState: optionsState })
-        break
-      case 'AddUzivatel':
-        options = optionsState.find(item => item.name === 'Uzivatel')
-        options.y = options.y + 1
-        this.setState({ optionsState: optionsState })
-        break
-      case 'RemoveUzivatel':
-        options = optionsState.find(item => item.name === 'Uzivatel')
-        if (options.y > 0) options.y = options.y - 1
-        this.setState({ optionsState: optionsState })
-        break
-      case 'AddManager':
-        options = optionsState.find(item => item.name === 'Manazer')
-        options.y = options.y + 1
-        this.setState({ optionsState: optionsState })
-        break
-      case 'RemoveManager':
-        options = optionsState.find(item => item.name === 'Manazer')
-        if (options.y > 0) options.y = options.y - 1
-        this.setState({ optionsState: optionsState })
-        break
-      case 'AddAuditor':
-        options = optionsState.find(item => item.name === 'Auditor')
-        options.y = options.y + 1
-        this.setState({ optionsState: optionsState })
-        break
-      case 'RemoveAuditor':
-        options = optionsState.find(item => item.name === 'Auditor')
-        if (options.y > 0) options.y = options.y - 1
-        this.setState({ optionsState: optionsState })
-        break
-      default:
-        break
-    }
+    options = optionsState.find(item => item.name === clickedButton)
+    if (isAdd) options.y = options.y + 1
+    else options.y = options.y - 1
+    console.log(options)
+
+    this.setState({ optionsState: optionsState })
   }
 
   render() {
@@ -85,7 +48,7 @@ class App extends React.Component {
               <Grid.Column width="5">
                 <Div>
                   <Window
-                    numbers={aktualniNumbers}
+                    numbers={actualNumbers}
                     aktualni={true}
                     name="Aktualni stav"
                   />
@@ -94,7 +57,7 @@ class App extends React.Component {
               <Grid.Column width="5">
                 <Div>
                   <Window
-                    numbers={posledniNumbers}
+                    numbers={lastNumbers}
                     name="Od posledniho prihlaseni"
                   />
                 </Div>
@@ -108,7 +71,7 @@ class App extends React.Component {
             <Grid.Row>
               <Grid.Column width="5">
                 <Div>
-                  <Upozorneni upozorneni={UpozorneniText} />
+                  <Upozorneni upozorneni={alertText} />
                 </Div>
               </Grid.Column>
               <Grid.Column width="10">
@@ -119,14 +82,17 @@ class App extends React.Component {
             </Grid.Row>
             <Grid.Row>
               <Grid.Column width="2">
-                <Button name="addAdmin" onClick={this.handleChange('addAdmin')}>
+                <Button
+                  name="addAdmin"
+                  onClick={this.handleChange('Admin', true)}
+                >
                   Add Administrator
                 </Button>
               </Grid.Column>
               <Grid.Column width="2">
                 <Button
                   name="RemoveAdmin"
-                  onClick={this.handleChange('RemoveAdmin')}
+                  onClick={this.handleChange('Admin', false)}
                 >
                   Remove Admin
                 </Button>
@@ -134,7 +100,7 @@ class App extends React.Component {
               <Grid.Column width="2">
                 <Button
                   name="addUzivatel"
-                  onClick={this.handleChange('AddUzivatel')}
+                  onClick={this.handleChange('Uzivatel', true)}
                 >
                   Add Uzivatel
                 </Button>
@@ -142,7 +108,7 @@ class App extends React.Component {
               <Grid.Column width="2">
                 <Button
                   name="RemoveUser"
-                  onClick={this.handleChange('RemoveUzivatel')}
+                  onClick={this.handleChange('Uzivatel', false)}
                 >
                   Remove User
                 </Button>
@@ -150,7 +116,7 @@ class App extends React.Component {
               <Grid.Column width="2">
                 <Button
                   name="addManager"
-                  onClick={this.handleChange('AddManager')}
+                  onClick={this.handleChange('Manazer', true)}
                 >
                   Add Manager
                 </Button>
@@ -158,7 +124,7 @@ class App extends React.Component {
               <Grid.Column width="2">
                 <Button
                   name="RemoveManager"
-                  onClick={this.handleChange('RemoveManager')}
+                  onClick={this.handleChange('Manazer', false)}
                 >
                   Remove Manager
                 </Button>
@@ -166,7 +132,7 @@ class App extends React.Component {
               <Grid.Column width="2">
                 <Button
                   name="addAuditor"
-                  onClick={this.handleChange('AddAuditor')}
+                  onClick={this.handleChange('Auditor', true)}
                 >
                   Add Auditor
                 </Button>
@@ -174,7 +140,7 @@ class App extends React.Component {
               <Grid.Column width="2">
                 <Button
                   name="RemoveAiditor"
-                  onClick={this.handleChange('RemoveAuditor')}
+                  onClick={this.handleChange('Auditor', false)}
                 >
                   Remove Auditor
                 </Button>

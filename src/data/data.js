@@ -30,7 +30,7 @@ export var data = [
     color: 'hsl(226, 70%, 50%)',
   },
 ]
-export var aktualniNumbers = [
+export var actualNumbers = [
   {
     number: 2,
     color: 'green',
@@ -56,7 +56,7 @@ export var aktualniNumbers = [
     color: 'black',
   },
 ]
-export var posledniNumbers = [
+export var lastNumbers = [
   {
     number: 21,
     color: 'green',
@@ -100,7 +100,7 @@ export var optionsData = [
     y: 21,
   },
 ]
-export var UpozorneniText = [
+export var alertText = [
   {
     id: 1,
     text:

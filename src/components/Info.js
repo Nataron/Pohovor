@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Divider, Header, Grid } from 'semantic-ui-react'
+
+import { Grid } from 'semantic-ui-react'
 
 const Info = ({ text, number, color }) => (
   <Grid>

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Divider, Grid, Icon, Container } from 'semantic-ui-react'
-import Info from './Info'
+import { Divider, Grid, Icon } from 'semantic-ui-react'
 
 const A = styled.div`
   background-color: white;
