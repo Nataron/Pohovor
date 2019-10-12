@@ -3,7 +3,7 @@ import { Container, Grid, Icon, Button } from 'semantic-ui-react'
 import styled from 'styled-components'
 
 import Window from './components/Window'
-import Upozorneni from './components/Alert'
+import Alert from './components/Alert'
 import Aktivita from './components/Activity'
 
 import WindowWithGraph from './components/WindowWithGraph'
@@ -19,10 +19,12 @@ import {
 const Div = styled.div`
   margin-left: 10px;
 `
+// Main component
+// function : Get all data and send it to components
 
 class App extends React.Component {
   state = { optionsState: optionsData }
-
+  //Adding or removing Users
   handleChange = (clickedButton, isAdd) => () => {
     const { optionsState } = this.state
     var options
@@ -41,29 +43,38 @@ class App extends React.Component {
       <Fragment>
         <Container style={{ backgroundColor: '#fff2e6' }}>
           <Icon style={{ padding: '10px' }} name="user outline">
-            Uzivatele
+            Uživatelé
           </Icon>
           <Grid columns={15}>
             <Grid.Row>
               <Grid.Column width="5">
                 <Div>
+                  {
+                    //First Window
+                  }
                   <Window
                     numbers={actualNumbers}
                     aktualni={true}
-                    name="Aktualni stav"
+                    name="Aktuálni stav"
                   />
                 </Div>
               </Grid.Column>
               <Grid.Column width="5">
                 <Div>
+                  {
+                    //Second Window
+                  }
                   <Window
                     numbers={lastNumbers}
-                    name="Od posledniho prihlaseni"
+                    name="Od posledniho přihlášení"
                   />
                 </Div>
               </Grid.Column>
               <Grid.Column width="5">
                 <Div>
+                  {
+                    //Third Window
+                  }
                   <WindowWithGraph data={data} optionsData={optionsState} />
                 </Div>
               </Grid.Column>
@@ -71,16 +82,25 @@ class App extends React.Component {
             <Grid.Row>
               <Grid.Column width="5">
                 <Div>
-                  <Upozorneni upozorneni={alertText} />
+                  {
+                    //Forth Window
+                  }
+                  <Alert alerts={alertText} />
                 </Div>
               </Grid.Column>
               <Grid.Column width="10">
                 <Div>
+                  {
+                    //Fifth Window
+                  }
                   <Aktivita tableData={tableData} />
                 </Div>
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
+              {
+                //Buttons to Add or remove Users
+              }
               <Grid.Column width="2">
                 <Button
                   name="addAdmin"
