@@ -31,8 +31,9 @@ class App extends React.Component {
 
     options = optionsState.find(item => item.name === clickedButton)
     if (isAdd) options.y = options.y + 1
-    else options.y = options.y - 1
-    console.log(options)
+    else {
+      if (options.y > 0) options.y = options.y - 1
+    }
 
     this.setState({ optionsState: optionsState })
   }
